@@ -5,13 +5,15 @@ import { MovieList } from "./pages";
 
 const App = () => {
   return (
-    <BrowserRouter>
-      <Header />
-      <Routes>
-        <Route path='' element={<MovieList title='Home' />} />
-      </Routes>
-      <Footer />
-    </BrowserRouter>
+    <div className='dark:bg-slate-800'>
+      <BrowserRouter>
+        <Header />
+        <Routes>
+          <Route path='' element={<MovieList title='Home' />} />
+        </Routes>
+        <Footer />
+      </BrowserRouter>
+    </div>
   );
 };
 
