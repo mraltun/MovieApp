@@ -1,22 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
+import useFetch from "../hooks/useFetch";
 import { Card } from "../components";
 
 const MovieList = () => {
-  const [movies, setMovies] = useState([]);
   const apiUrl = import.meta.env.VITE_API_URL;
   const apiKey = import.meta.env.VITE_API_KEY;
-
-  useEffect(() => {
-    const fetchMovies = async () => {
-      const response = await fetch(
-        `${apiUrl}/movie/now_playing?api_key=${apiKey}`
-      );
-      console.log(response);
-      const data = await response.json();
-      setMovies(data.results);
-    };
-    fetchMovies();
-  }, []);
+  const { data: movies } = useFetch(
+    `${apiUrl}/movie/now_playing?api_key=${apiKey}`
+  );
 
   return (
     <main>
