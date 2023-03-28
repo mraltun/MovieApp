@@ -9,7 +9,12 @@ const App = () => {
       <BrowserRouter>
         <Header />
         <Routes>
-          <Route path='' element={<MovieList title='Home' />} />
+          <Route
+            path=''
+            element={
+              <MovieList apiPath='/movie/now_playing?api_key=' title='Home' />
+            }
+          />
         </Routes>
         <Footer />
       </BrowserRouter>

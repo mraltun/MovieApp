@@ -2,12 +2,8 @@ import React from "react";
 import useFetch from "../hooks/useFetch";
 import { Card } from "../components";
 
-const MovieList = () => {
-  const apiUrl = import.meta.env.VITE_API_URL;
-  const apiKey = import.meta.env.VITE_API_KEY;
-  const { data: movies } = useFetch(
-    `${apiUrl}/movie/now_playing?api_key=${apiKey}`
-  );
+const MovieList = ({ apiPath }) => {
+  const { data: movies } = useFetch(apiPath);
 
   return (
     <main>
