@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Footer, Header } from "./components";
-import { MovieList } from "./pages";
+import { MovieList, Search } from "./pages";
 
 const App = () => {
   return (
@@ -14,6 +14,10 @@ const App = () => {
             element={
               <MovieList apiPath='/movie/now_playing?api_key=' title='Home' />
             }
+          />
+          <Route
+            path='search'
+            element={<Search apiPath='/search/movie?api_key=' title='Search' />}
           />
         </Routes>
         <Footer />
