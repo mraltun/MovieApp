@@ -5,19 +5,19 @@ import { MovieList, Search } from "./pages";
 
 const App = () => {
   return (
-    <div className='dark:bg-slate-800'>
+    <div className="dark:bg-slate-800">
       <BrowserRouter>
         <Header />
         <Routes>
           <Route
-            path=''
+            path=""
             element={
-              <MovieList apiPath='/movie/now_playing?api_key=' title='Home' />
+              <MovieList apiPath="/movie/now_playing?api_key=" title="Home" />
             }
           />
           <Route
-            path='search'
-            element={<Search apiPath='/search/movie?api_key=' title='Search' />}
+            path="search"
+            element={<Search apiPath="/search/movie?api_key=" title="Search" />}
           />
         </Routes>
         <Footer />
