@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Footer, Header } from "./components";
-import { MovieList, PageNotFound, Search } from "./pages";
+import { MovieDetail, MovieList, PageNotFound, Search } from "./pages";
 
 const App = () => {
   return (
@@ -15,6 +15,7 @@ const App = () => {
               <MovieList apiPath="/movie/now_playing?api_key=" title="Home" />
             }
           />
+          <Route path="movie/:id" element={<MovieDetail />} />
           <Route
             path="search"
             element={<Search apiPath="/search/movie?api_key=" title="Search" />}
