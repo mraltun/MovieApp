@@ -1,12 +1,13 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { Footer, Header } from "./components";
+import { Footer, Header, ScrollToTop } from "./components";
 import { MovieDetail, MovieList, PageNotFound, Search } from "./pages";
 
 const App = () => {
   return (
     <div className="dark:bg-darkbg">
       <BrowserRouter>
+        <ScrollToTop />
         <Header />
         <Routes>
           <Route
