@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Footer, Header } from "./components";
-import { MovieList, Search } from "./pages";
+import { MovieList, PageNotFound, Search } from "./pages";
 
 const App = () => {
   return (
@@ -18,6 +18,10 @@ const App = () => {
           <Route
             path="search"
             element={<Search apiPath="/search/movie?api_key=" title="Search" />}
+          />
+          <Route
+            path="*"
+            element={<PageNotFound apiPath="" title="Page Not Found" />}
           />
         </Routes>
         <Footer />
