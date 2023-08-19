@@ -5,7 +5,7 @@ import { MovieList, Search } from "./pages";
 
 const App = () => {
   return (
-    <div className="dark:bg-slate-800">
+    <div className="dark:bg-darkbg">
       <BrowserRouter>
         <Header />
         <Routes>
