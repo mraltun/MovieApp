@@ -18,13 +18,32 @@ const App = () => {
           />
           <Route path="movie/:id" element={<MovieDetail />} />
           <Route
-            path="search"
-            element={<Search apiPath="/search/movie?api_key=" title="Search" />}
+            path="/movies/popular"
+            element={
+              <MovieList apiPath="/movie/popular?api_key=" title="Popular" />
+            }
           />
           <Route
-            path="*"
-            element={<PageNotFound apiPath="" title="Page Not Found" />}
+            path="/movies/top"
+            element={
+              <MovieList
+                apiPath="/movie/top_rated?api_key="
+                title="Top Rated"
+              />
+            }
           />
+          <Route
+            path="/movies/upcoming"
+            element={
+              <MovieList apiPath="/movie/upcoming?api_key=" title="Upcoming" />
+            }
+          />
+          <Route
+            path="search"
+            element={<Search apiPath="/search/movie?api_key=" />}
+          />
+
+          <Route path="*" element={<PageNotFound />} />
         </Routes>
         <Footer />
       </BrowserRouter>
