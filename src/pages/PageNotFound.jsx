@@ -1,8 +1,10 @@
 import { useNavigate } from "react-router-dom";
 import PageNotFoundImage from "../assets/pagenotfound.png";
+import { useTitle } from "../hooks/useTitle";
 
 const PageNotFound = () => {
   const navigate = useNavigate();
+  const appTitle = useTitle("Page Not Found");
 
   return (
     <main>

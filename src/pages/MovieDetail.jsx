@@ -1,14 +1,16 @@
 import { useState, useEffect } from "react";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
+import { useTitle } from "../hooks/useTitle";
 import noPoster from "../assets/noposter.png";
 
-const MovieDetail = () => {
+const MovieDetail = ({ title }) => {
   const [movie, setMovie] = useState({});
   const params = useParams();
   const apiKey = import.meta.env.VITE_API_KEY;
   const image = movie.poster_path
     ? `https://image.tmdb.org/t/p/w500/${movie.poster_path}`
     : noPoster;
+  const appTitle = useTitle(movie.title);
 
   // Temporary solution
   useEffect(() => {
